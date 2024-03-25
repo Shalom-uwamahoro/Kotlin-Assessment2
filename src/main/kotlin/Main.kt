@@ -30,7 +30,7 @@ fun arrayInt(num1: Int, num2: Int, num3: Int):Int{
 
 }
 fun volumeFun(r: Double): Double{
-    var volume= 4/3 *3.14159* r
+    var volume= (4/3) *3.14159* r*r*r
     return volume
 }
 
