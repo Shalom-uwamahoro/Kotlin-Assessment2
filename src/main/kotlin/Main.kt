@@ -18,7 +18,8 @@ fun main() {
 }
 
 fun stringFun(word: String) {
-    println(word.replace("b", ""))
+//    println(word.replace("b", ""))
+    println(word.split("b"))
 }
 
 fun arrayInt(num1: Int, num2: Int, num3: Int) {
