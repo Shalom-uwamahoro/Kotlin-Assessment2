@@ -18,13 +18,15 @@ fun main() {
 }
 
 fun stringFun(word: String) {
-//    println(word.replace("b", ""))
+
     println(word.split("b"))
 }
 
-fun arrayInt(num1: Int, num2: Int, num3: Int) {
+fun arrayInt(num1: Int, num2: Int, num3: Int):Int{
     var sum = num1 + num2 + num3
     var average= sum/3
+    return sum
+    return average
 
 }
 fun volumeFun(r: Double): Double{
