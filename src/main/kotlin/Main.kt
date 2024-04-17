@@ -2,47 +2,60 @@
 fun main() {
     stringFun("Barnie bakes brown bagels and buns")
 
-    var arrayInt= arrayOf(23, 56, 78)
-    println(arrayInt.sum())
-    println(arrayInt.count())
-    println(arrayInt.average())
+    sumCountAver(arrayOf(23,56,78,69))
 
-
-   println(volumeFun(14.56))
-
-   println(isPalindrome("madam"))
-    println(isPalindrome("shalom"))
-
-
-
+    volumeFun(14.56)
+    println(isPalindrome("Madam"))
+    println(isPalindrome("pop"))
+    println(isPalindrome("Shalom"))
 }
-
 fun stringFun(word: String) {
 
-    println(word.split("b"))
+    println(word.lowercase().split('b'))
+    //the .lowercase() ensures that even letter b that were in capital letter are removed
 }
 
-fun arrayInt(num1: Int, num2: Int, num3: Int):Int{
-    var sum = num1 + num2 + num3
-    var average= sum/3
-    return sum
-    return average
+//fun arrayInt(num: Array<Int>): Int{
+//    var addition= num.sum()
+//    var averageNum= num.average().toInt()
+//    var countNum= num.count()
+//    return addition
+//    return averageNum
+//    return countNum
+//  The above is a very wrong approach because you cannot return more than one value in rows
+//  So we use data class concept in such cases
+//}
 
+data class Calc( var sum: Int, var count: Int, var avg: Double) {
+}
+fun sumCountAver(nums: Array<Int>): Calc {
+    var summation = nums.sum()
+    var counting = nums.count() //or nums.size
+    var averageNum = nums.average()
+    var result = Calc(summation, counting, averageNum)
+    println(result)
+    return result
 }
 fun volumeFun(r: Double): Double{
-    var volume= (4/3) *3.14159* r*r*r
+    val pi= 3.14159
+    val num=4/3
+    var volume= pi*num*r*r*r
+    println(volume)
     return volume
 }
+fun isPalindrome(word: String): Boolean {
+    if (word.lowercase()==word.lowercase().reversed())
 
+    { return true }
+    else
+    { return false }
 
-fun isPalindrome(word: String) {
-    var palindrome = word.reversed()
-    if (word == palindrome) {
-        println("true")
-    } else {
-        println(false)
-    }
+//    var palindrome= word.lowercase()==palindromeWord
+//    println(palindrome)
+//    return palindrome
+    //The above creation of variable can work too but it is hard coding
 }
+
 
 
 
